@@ -30,7 +30,7 @@ import { SCREEN_STRINGS } from '../i18n/screenStrings';
 import { LANGUAGES } from '../i18n/translations';
 import { LearnCategoryId } from '../types/finvora';
 
-const BAR_COLORS = ['#16A34A', '#F97316', '#0EA5E9', '#FACC15', '#166534'];
+const BAR_COLORS = ['#16A34A', '#F97316', '#0EA5E9', '#FACC15', '#166534', '#8B5CF6'];
 
 export const AdminDashboardPage: React.FC = () => {
   const {

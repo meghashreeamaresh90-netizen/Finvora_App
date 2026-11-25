@@ -1,4 +1,4 @@
-export type LanguageCode = 'en' | 'kn' | 'hi' | 'mr' | 'ta';
+export type LanguageCode = 'en' | 'kn' | 'te' | 'hi' | 'mr' | 'ta';
 
 export type LearnCategoryId =
   | 'savings'

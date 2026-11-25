@@ -30,6 +30,16 @@ const VOICE_DRAWER_TEXT: Record<
     thinking: 'ಉತ್ತರ ಸಿದ್ಧವಾಗುತ್ತಿದೆ...',
     hint: 'ಉದಾಹರಣೆ: "ಬೆಳೆ ಸಾಲ ಹೇಗೆ ಪಡೆಯುವುದು?", "ಸರ್ಕಾರಿ ಯೋಜನೆ", "ಬ್ಯಾಂಕ್"',
   },
+  te: {
+    fabLabel: 'వాయిస్ సహాయకుడు',
+    title: 'మాట్లాడి అడగండి',
+    subtitle: 'మైక్ నొక్కి తెలుగులో ప్రశ్న అడగండి లేదా పేజీని తెరవండి.',
+    heardLabel: 'మీరు చెప్పింది:',
+    navMatched: 'మీరు అడిగిన పేజీకి తీసుకెళ్తోంది:',
+    openPage: 'తెరవండి',
+    thinking: 'సమాధానం సిద్ధమవుతోంది...',
+    hint: 'ఉదాహరణ: "పంట రుణం ఎలా పొందాలి?", "ప్రభుత్వ పథకాలు", "దగ్గరలోని బ్యాంకు"',
+  },
   hi: {
     fabLabel: 'आवाज़ सहायक',
     title: 'बोलकर पूछें',
@@ -72,31 +82,33 @@ const VOICE_DRAWER_TEXT: Record<
   },
 };
 
-function detectVoiceRoute(text: string): { path: string; labelKn: string; labelEn: string } | null {
+function detectVoiceRoute(
+  text: string
+): { path: string; labelKn: string; labelTe: string; labelEn: string } | null {
   const lower = text.toLowerCase();
-  if (/scheme|yojana|kisan|ಯೋಜನೆ|ಪೆನ್ಶನ್|योजना|திட்டம்/.test(lower)) {
-    return { path: '/schemes', labelKn: 'ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು', labelEn: 'Govt Schemes' };
+  if (/scheme|yojana|kisan|ಯೋಜನೆ|ಪೆನ್ಶನ್|పథకం|పథకాలు|కిసాన్|योजना|திட்டம்/.test(lower)) {
+    return { path: '/schemes', labelKn: 'ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು', labelTe: 'ప్రభుత్వ పథకాలు', labelEn: 'Govt Schemes' };
   }
-  if (/bank|atm|mandya|ಬ್ಯಾಂಕ್|ಎಟಿಎಂ|बैंक|बँक|வங்கி/.test(lower)) {
-    return { path: '/banks', labelKn: 'ಹತ್ತಿರದ ಬ್ಯಾಂಕ್', labelEn: 'Nearby Banks' };
+  if (/bank|atm|mandya|ಬ್ಯಾಂಕ್|ಎಟಿಎಂ|బ్యాంక్|బ్యాంకు|ఏటీఎం|बैंक|बँक|வங்கி/.test(lower)) {
+    return { path: '/banks', labelKn: 'ಹತ್ತಿರದ ಬ್ಯಾಂಕ್', labelTe: 'దగ్గరలోని బ్యాంకులు', labelEn: 'Nearby Banks' };
   }
-  if (/goal|pump|education|ಗುರಿ|ಪಂಪ್|ಶಿಕ್ಷಣ|लक्ष्य|ध्येय|இலக்கு/.test(lower)) {
-    return { path: '/goals', labelKn: 'ಉಳಿತಾಯ ಗುರಿಗಳು', labelEn: 'Savings Goals' };
+  if (/goal|pump|education|ಗುರಿ|ಪಂಪ್|ಶಿಕ್ಷಣ|లక్ష్యం|పంపు|చదువు|लक्ष्य|ध्येय|இலக்கு/.test(lower)) {
+    return { path: '/goals', labelKn: 'ಉಳಿತಾಯ ಗುರಿಗಳು', labelTe: 'పొదుపు లక్ష్యాలు', labelEn: 'Savings Goals' };
   }
-  if (/calculator|emi|interest|ಲೆಕ್ಕ|ಇಎಂಐ|ಬಡ್ಡಿ|कैलकुलेटर|कॅल्क्युलेटर|கணக்கீடு/.test(lower)) {
-    return { path: '/calculators', labelKn: 'ಲೆಕ್ಕಾಚಾರಗಳು', labelEn: 'Calculators' };
+  if (/calculator|emi|interest|ಲೆಕ್ಕ|ಇಎಂಐ|ಬಡ್ಡಿ|లెక్క|వడ్డీ|ఈఎంఐ|कैलकुलेटर|कॅल्क्युलेटर|கணக்கீடு/.test(lower)) {
+    return { path: '/calculators', labelKn: 'ಲೆಕ್ಕಾಚಾರಗಳು', labelTe: 'ఆర్థిక లెక్కలు', labelEn: 'Calculators' };
   }
-  if (/scam|fraud|link|1930|ವಂಚನೆ|ಮೋಸ|ಧೋಖಾ|ठगी|फसवणूक|மோசடி/.test(lower)) {
-    return { path: '/scam-rescue', labelKn: 'ವಂಚನೆ ತಡೆ', labelEn: 'Scam Rescue' };
+  if (/scam|fraud|link|1930|ವಂಚನೆ|ಮೋಸ|ಧೋಖಾ|మోసం|వంచన|ठगी|फसवणूक|மோசடி/.test(lower)) {
+    return { path: '/scam-rescue', labelKn: 'ವಂಚನೆ ತಡೆ', labelTe: 'మోసాల నివారణ', labelEn: 'Scam Rescue' };
   }
-  if (/upi|qr|ಯುಪಿಐ|ಕ್ಯೂಆರ್|यूपीआई|यूपीआय|யூபிஐ/.test(lower) && text.length < 30) {
-    return { path: '/upi-guide', labelKn: 'ಯುಪಿಐ ಮಾರ್ಗದರ್ಶಿ', labelEn: 'UPI Guide' };
+  if (/upi|qr|ಯುಪಿಐ|ಕ್ಯೂಆರ್|యూపీఐ|క్యూఆర్|यूपीआई|यूपीआय|யூபிஐ/.test(lower) && text.length < 30) {
+    return { path: '/upi-guide', labelKn: 'ಯುಪಿಐ ಮಾರ್ಗದರ್ಶಿ', labelTe: 'యూపీఐ గైడ్', labelEn: 'UPI Guide' };
   }
-  if (/learn|lesson|ಪಾಠ|ಕಲಿಯಿರಿ|सीखें|शिका|கற்க/.test(lower) && text.length < 30) {
-    return { path: '/learn', labelKn: 'ಕಲಿಯಿರಿ', labelEn: 'Learn' };
+  if (/learn|lesson|ಪಾಠ|ಕಲಿಯಿರಿ|నేర్చుకో|పాఠం|सीखें|शिका|கற்க/.test(lower) && text.length < 30) {
+    return { path: '/learn', labelKn: 'ಕಲಿಯಿರಿ', labelTe: 'నేర్చుకోండి', labelEn: 'Learn' };
   }
-  if (/progress|badge|dashboard|ಪ್ರಗತಿ|ಬ್ಯಾಡ್ಜ್|ಡ್ಯಾಶ್/.test(lower)) {
-    return { path: '/dashboard', labelKn: 'ನನ್ನ ಪ್ರಗತಿ', labelEn: 'My Progress' };
+  if (/progress|badge|dashboard|ಪ್ರಗತಿ|ಬ್ಯಾಡ್ಜ್|ಡ್ಯಾಶ್|ప్రగతి|బ్యాడ్జ్|డాష్/.test(lower)) {
+    return { path: '/dashboard', labelKn: 'ನನ್ನ ಪ್ರಗತಿ', labelTe: 'నా పురోగతి', labelEn: 'My Progress' };
   }
   return null;
 }
@@ -113,6 +125,7 @@ export const VoiceAssistantDrawer: React.FC = () => {
   const [matchedRoute, setMatchedRoute] = useState<{
     path: string;
     labelKn: string;
+    labelTe: string;
     labelEn: string;
   } | null>(null);
 
@@ -131,6 +144,8 @@ export const VoiceAssistantDrawer: React.FC = () => {
       const confirmMsg =
         language === 'kn'
           ? `${routeMatch.labelKn} ಪುಟವನ್ನು ತೆರೆಯಲಾಗಿದೆ.`
+          : language === 'te'
+          ? `${routeMatch.labelTe} పేజీ తెరవబడింది.`
           : `Opening ${routeMatch.labelEn}.`;
       setReplyText(confirmMsg);
       await speakText(confirmMsg, language, {
@@ -235,7 +250,11 @@ export const VoiceAssistantDrawer: React.FC = () => {
               >
                 <span>
                   {ui.navMatched}{' '}
-                  {language === 'kn' ? matchedRoute.labelKn : matchedRoute.labelEn}
+                  {language === 'kn'
+                    ? matchedRoute.labelKn
+                    : language === 'te'
+                    ? matchedRoute.labelTe
+                    : matchedRoute.labelEn}
                 </span>
                 <span>{ui.openPage} →</span>
               </button>

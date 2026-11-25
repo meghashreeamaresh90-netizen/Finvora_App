@@ -8,6 +8,7 @@ export function formatINR(amount: number): string {
 
 export const SPEECH_LANG_MAP: Record<LanguageCode, string> = {
   kn: 'kn-IN',
+  te: 'te-IN',
   hi: 'hi-IN',
   mr: 'mr-IN',
   ta: 'ta-IN',
@@ -16,6 +17,7 @@ export const SPEECH_LANG_MAP: Record<LanguageCode, string> = {
 
 export const LANGUAGE_DISPLAY_NAMES: Record<LanguageCode, string> = {
   kn: 'Kannada',
+  te: 'Telugu',
   hi: 'Hindi',
   mr: 'Marathi',
   ta: 'Tamil',
@@ -311,6 +313,11 @@ const VOICE_ERROR_MESSAGES: Record<LanguageCode, { blocked: string; unclear: str
     blocked: 'ಮೈಕ್ ಅನುಮತಿ ನಿರಾಕರಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಮೈಕ್ ಅನುಮತಿ ನೀಡಿ.',
     unclear: 'ಧ್ವನಿ ಸ್ಪಷ್ಟವಾಗಿ ಕೇಳಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
     unsupported: 'ಈ ಸಾಧನದಲ್ಲಿ ಧ್ವನಿ ರೆಕಾರ್ಡಿಂಗ್ ಲಭ್ಯವಿಲ್ಲ.',
+  },
+  te: {
+    blocked: 'మైక్ అనుమతి నిరాకరించబడింది. దయచేసి బ్రౌజర్ సెట్టింగ్‌లలో మైక్ అనుమతి ఇవ్వండి.',
+    unclear: 'మాట స్పష్టంగా వినిపించలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.',
+    unsupported: 'ఈ పరికరంలో వాయిస్ రికార్డింగ్ అందుబాటులో లేదు.',
   },
   hi: {
     blocked: 'माइक की अनुमति नहीं है। कृपया ब्राउज़र में माइक अनुमति दें।',

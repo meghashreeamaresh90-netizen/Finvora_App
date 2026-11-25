@@ -96,6 +96,8 @@ export const DashboardPage: React.FC = () => {
   const speakSummaryText =
     language === 'kn'
       ? `${s.profileTitle}. ${completedLessonIds.length} ಪಾಠಗಳು ಮುಗಿದಿವೆ, ${unlockedBadges.length} ಬ್ಯಾಡ್ಜ್‌ಗಳು ಲಭಿಸಿವೆ, ಮತ್ತು ಈ ತಿಂಗಳು ${formatINR(totalSaved)} ಉಳಿತಾಯವಾಗಿದೆ.`
+      : language === 'te'
+      ? `${s.profileTitle}. ${completedLessonIds.length} పాఠాలు పూర్తయ్యాయి, ${unlockedBadges.length} బ్యాడ్జీలు లభించాయి, మరియు ఈ నెలలో ${formatINR(totalSaved)} పొదుపు అయింది.`
       : `${s.profileTitle}. ${completedLessonIds.length} / ${lessons.length} ${s.lessonsDoneCard}, ${unlockedBadges.length} ${s.badgesEarnedText}, ${s.monthlySavedCard}: ${formatINR(totalSaved)}.`;
 
   return (

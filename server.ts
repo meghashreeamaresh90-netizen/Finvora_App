@@ -25,8 +25,30 @@ function resolveServerPort(): number {
 
 const PORT = resolveServerPort();
 const MODEL_NAME = 'gemini-4-hydrogen';
+const FALLBACK_TEXT_MODEL = 'gemini-3.1-flash-lite';
 const PRIMARY_TTS_MODEL = 'gemini-3.8-flash-lite-tts';
 const FALLBACK_TTS_MODEL = 'gemini-3.8-flash-tts';
+
+async function generateWithFallback(
+  ai: GoogleGenAI,
+  params: Omit<Parameters<GoogleGenAI['models']['generateContent']>[0], 'model'>
+) {
+  try {
+    return await ai.models.generateContent({
+      model: MODEL_NAME,
+      ...params,
+    });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    const isTransient = msg.includes('503') || msg.includes('UNAVAILABLE') || msg.includes('429');
+    if (!isTransient) throw err;
+    console.warn(`Primary model (${MODEL_NAME}) unavailable, falling back to ${FALLBACK_TEXT_MODEL}`);
+    return await ai.models.generateContent({
+      model: FALLBACK_TEXT_MODEL,
+      ...params,
+    });
+  }
+}
 
 function getGeminiClient(apiVersion?: string): GoogleGenAI | null {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -60,6 +82,13 @@ const LANGUAGE_META: Record<
     examples: 'UPI → ಯುಪಿಐ, OTP → ಒಟಿಪಿ, KYC → ಕೆವೈಸಿ, EMI → ಇಎಂಐ, SBI → ಎಸ್ಬಿಐ, ATM → ಎಟಿಎಂ, PM-KISAN → ಪಿಎಂ ಕಿಸಾನ್, SMS → ಎಸ್ಎಂಎಸ್, QR → ಕ್ಯೂಆರ್, PIN → ಪಿನ್',
     amountExample: '₹500 → ಐನೂರು ರೂಪಾಯಿ, ₹700 → ಏಳು ನೂರು ರೂಪಾಯಿ, ₹2000 → ಎರಡು ಸಾವಿರ ರೂಪಾಯಿ',
     awarenessNote: 'ಇದು ಕೇವಲ ಆರ್ಥಿಕ ಜಾಗೃತಿ ಮಾತ್ರ, ಕಾನೂನು ಸಲಹೆಯಲ್ಲ.',
+  },
+  te: {
+    name: 'Telugu',
+    scriptName: 'Telugu (తెలుగు)',
+    examples: 'UPI → యూపీఐ, OTP → ఓటీపీ, KYC → కేవైసీ, EMI → ఈఎంఐ, SBI → ఎస్బీఐ, ATM → ఏటీఎం, PM-KISAN → పీఎం కిసాన్, SMS → ఎస్ఎంఎస్, QR → క్యూఆర్, PIN → పిన్',
+    amountExample: '₹500 → ఐదు వందల రూపాయలు, ₹700 → ఏడు వందల రూపాయలు, ₹2000 → రెండు వేల రూపాయలు',
+    awarenessNote: 'ఇది కేవలం ఆర్థిక అవగాహన మాత్రమే, న్యాయ సలహా కాదు.',
   },
   hi: {
     name: 'Hindi',
@@ -173,8 +202,7 @@ async function startServer() {
 
       const langDirective = buildStrictLanguageDirective(language);
 
-      const response = await ai.models.generateContent({
-        model: MODEL_NAME,
+      const response = await generateWithFallback(ai, {
         contents: `Analyze this SMS / WhatsApp message or link for financial scam risk:\n\n"""${message.trim()}"""`,
         config: {
           systemInstruction:
@@ -283,8 +311,7 @@ async function startServer() {
         ? `Previous conversation:\n${historyText}\n\nCurrent question: ${message.trim()}`
         : message.trim();
 
-      const response = await ai.models.generateContent({
-        model: MODEL_NAME,
+      const response = await generateWithFallback(ai, {
         contents: prompt,
         config: {
           systemInstruction,
@@ -333,8 +360,7 @@ async function startServer() {
         .map((g) => `${g.title}: saved ${g.saved} of ${g.target} rupees`)
         .join('; ');
 
-      const response = await ai.models.generateContent({
-        model: MODEL_NAME,
+      const response = await generateWithFallback(ai, {
         contents:
           `User Monthly Income: ${income} rupees. Monthly Expenses: ${expenses} rupees. Monthly Surplus: ${Math.max(0, income - expenses)} rupees. ` +
           `Savings Goals: ${goalsSummary || 'Water Pump 15000 rupees'}. ` +
@@ -359,7 +385,7 @@ async function startServer() {
     }
   });
 
-  // D. Gemini Text-to-Speech (TTS) endpoint for native Kannada / Hindi / Marathi / Tamil / English audio
+  // D. Gemini Text-to-Speech (TTS) endpoint for native Kannada / Telugu / Hindi / Marathi / Tamil / English audio
   app.post('/api/ai/tts', async (req, res) => {
     try {
       const { text, language = 'en' } = req.body as {

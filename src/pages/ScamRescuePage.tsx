@@ -24,7 +24,7 @@ interface ScamCheckResult {
 function runOfflineSafetyFallback(text: string, language: string): ScamCheckResult {
   const lower = text.toLowerCase();
   const hasDangerKeywords =
-    /pin|otp|kyc|lottery|prize|http:\/\/|bit\.ly|xyz|won|blocked|suspended|scan.*qr|receive|ಪಿನ್|ಒಟಿಪಿ|ಕೆವೈಸಿ/.test(
+    /pin|otp|kyc|lottery|prize|http:\/\/|bit\.ly|xyz|won|blocked|suspended|scan.*qr|receive|ಪಿನ್|ಒಟಿಪಿ|ಕೆವೈಸಿ|పిన్|ఓటీపీ|కేవైసీ/.test(
       lower
     );
 
@@ -49,6 +49,31 @@ function runOfflineSafetyFallback(text: string, language: string): ScamCheckResu
         'ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಶಾಖೆಗೆ ಭೇಟಿ ನೀಡಿ.',
       ],
       advice: 'ಸಂಶಯ ಬಂದರೆ ಕುಟುಂಬದವರನ್ನು ಅಥವಾ ಬ್ಯಾಂಕ್ ಸಿಬ್ಬಂದಿಯನ್ನು ಕೇಳಿ.',
+      isOfflineFallback: true,
+    };
+  }
+
+  if (language === 'te') {
+    if (hasDangerKeywords) {
+      return {
+        verdict: 'SCAM',
+        reasons: [
+          'ఇది యూపీఐ పిన్, ఓటీపీ లేదా అనుమానాస్పద లింక్ అడుగుతోంది.',
+          'నిజమైన బ్యాంకులు లేదా పీఎం కిసాన్ పథకం పిన్ అడగవు.',
+          'డబ్బు పొందడానికి క్యూఆర్ కోడ్ స్కాన్ చేయాల్సిన అవసరం లేదు.',
+        ],
+        advice: 'ఏ లింక్‌పై క్లిక్ చేయవద్దు మరియు పిన్ చెప్పవద్దు. పంతొమ్మిది వందల ముప్పైకి కాల్ చేయండి.',
+        isOfflineFallback: true,
+      };
+    }
+    return {
+      verdict: 'SUSPICIOUS',
+      reasons: [
+        'సర్వర్ కనెక్ట్ కాకపోవడంతో ఆఫ్‌లైన్ భద్రతా తనిఖీ జరిగింది.',
+        'తెలియని లింక్‌లపై ఎప్పుడూ క్లిక్ చేయవద్దు.',
+        'నిర్ధారించుకోవడానికి మీ బ్యాంక్ శాఖను నేరుగా సంప్రదించండి.',
+      ],
+      advice: 'అనుమానం ఉంటే కుటుంబ సభ్యులను లేదా బ్యాంక్ సిబ్బందిని అడగండి.',
       isOfflineFallback: true,
     };
   }
@@ -131,8 +156,18 @@ export const ScamRescuePage: React.FC = () => {
       verdict: result.verdict,
       reasons: result.reasons,
       advice: result.advice,
-      reportedBy: language === 'kn' ? 'ಲಕ್ಷ್ಮಿ (ಮಂಡ್ಯ)' : 'Lakshmi (Mandya)',
-      location: language === 'kn' ? 'ಮಂಡ್ಯ ತಾಲೂಕು' : 'Mandya Taluk, KA',
+      reportedBy:
+        language === 'kn'
+          ? 'ಲಕ್ಷ್ಮಿ (ಮಂಡ್ಯ)'
+          : language === 'te'
+          ? 'లక్ష్మి (మండ్య)'
+          : 'Lakshmi (Mandya)',
+      location:
+        language === 'kn'
+          ? 'ಮಂಡ್ಯ ತಾಲೂಕು'
+          : language === 'te'
+          ? 'మండ్య తాలూకా'
+          : 'Mandya Taluk, KA',
     });
     setReported(true);
   };

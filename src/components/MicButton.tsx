@@ -21,6 +21,11 @@ const MIC_LABELS: Record<
     listening: 'ಕೇಳುತ್ತಿದೆ... ನಿಲ್ಲಿಸಿ',
     processing: 'ಬರೆಯುತ್ತಿದೆ...',
   },
+  te: {
+    speak: 'మాట్లాడండి',
+    listening: 'వింటోంది... ఆపండి',
+    processing: 'రాస్తోంది...',
+  },
   hi: {
     speak: 'बोलें',
     listening: 'सुन रहा है... रोकें',

@@ -48,6 +48,7 @@ const DEFAULT_STATE: FinvoraState = {
   unlockedBadges: ['saver-star'],
   languageUsage: {
     kn: 640,
+    te: 260,
     hi: 390,
     mr: 185,
     ta: 140,
