@@ -1,0 +1,242 @@
+---
+name: Rural Empowerment Clarity
+colors:
+  surface: '#faf8ff'
+  surface-dim: '#d2d9f4'
+  surface-bright: '#faf8ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f2f3ff'
+  surface-container: '#eaedff'
+  surface-container-high: '#e2e7ff'
+  surface-container-highest: '#dae2fd'
+  on-surface: '#131b2e'
+  on-surface-variant: '#3e4a3d'
+  inverse-surface: '#283044'
+  inverse-on-surface: '#eef0ff'
+  outline: '#6e7b6c'
+  outline-variant: '#bdcaba'
+  surface-tint: '#006e2d'
+  primary: '#006b2c'
+  on-primary: '#ffffff'
+  primary-container: '#00873a'
+  on-primary-container: '#f7fff2'
+  inverse-primary: '#62df7d'
+  secondary: '#9d4300'
+  on-secondary: '#ffffff'
+  secondary-container: '#fd761a'
+  on-secondary-container: '#5c2400'
+  tertiary: '#00628d'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#007cb1'
+  on-tertiary-container: '#fcfcff'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#7ffc97'
+  primary-fixed-dim: '#62df7d'
+  on-primary-fixed: '#002109'
+  on-primary-fixed-variant: '#005320'
+  secondary-fixed: '#ffdbca'
+  secondary-fixed-dim: '#ffb690'
+  on-secondary-fixed: '#341100'
+  on-secondary-fixed-variant: '#783200'
+  tertiary-fixed: '#c9e6ff'
+  tertiary-fixed-dim: '#89ceff'
+  on-tertiary-fixed: '#001e2f'
+  on-tertiary-fixed-variant: '#004c6e'
+  background: '#faf8ff'
+  on-background: '#131b2e'
+  surface-variant: '#dae2fd'
+typography:
+  display-hero:
+    fontFamily: Epilogue
+    fontSize: 36px
+    fontWeight: '800'
+    lineHeight: 48px
+    letterSpacing: -0.02em
+  display-hero-mobile:
+    fontFamily: Epilogue
+    fontSize: 30px
+    fontWeight: '800'
+    lineHeight: 40px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Epilogue
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 38px
+  headline-lg-mobile:
+    fontFamily: Epilogue
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: 34px
+  headline-md:
+    fontFamily: Epilogue
+    fontSize: 22px
+    fontWeight: '700'
+    lineHeight: 30px
+  body-xl:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 32px
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 18px
+    fontWeight: '500'
+    lineHeight: 28px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '500'
+    lineHeight: 24px
+  currency-display:
+    fontFamily: Epilogue
+    fontSize: 32px
+    fontWeight: '800'
+    lineHeight: 40px
+  currency-display-mobile:
+    fontFamily: Epilogue
+    fontSize: 26px
+    fontWeight: '800'
+    lineHeight: 34px
+  label-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 18px
+    fontWeight: '700'
+    lineHeight: 26px
+  label-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 15px
+    fontWeight: '600'
+    lineHeight: 22px
+  label-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 13px
+    fontWeight: '700'
+    lineHeight: 18px
+    letterSpacing: 0.04em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-mobile: 0.75rem
+  gutter-tablet: 1.25rem
+  gutter-desktop: 1.5rem
+  margin: 1.25rem
+  margin-mobile: 1rem
+  margin-tablet: 2rem
+  margin-desktop: 3rem
+  space-xs: 0.375rem
+  space-sm: 0.75rem
+  space-md: 1.25rem
+  space-lg: 1.75rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system is engineered specifically for grassroots accessibility, financial dignity, and cross-generational trust. It directly addresses users in rural and semi-urban communities—many of whom may be first-time smartphone owners, elderly community members, or individuals with varying levels of literacy. The aesthetic rejects sterile tech minimalism in favor of a warm, daylight-bright, high-legibility interface built to withstand direct outdoor sunlight and low-grade projector displays in village hall presentations.
+
+The emotional signature is protective, uplifting, and straightforward:
+- **Trust & Growth:** Instilled through earthy greens that evoke agricultural prosperity and disciplined savings.
+- **Urgency & Action:** Powered by bright solar oranges that guide clear financial decision-making without intimidating the user.
+- **Cognitive Ease:** High contrast, massive visual affordances, tactile boundaries, and ubiquitous audio assistance cues dismantle the intimidation of complex banking workflows.
+- **Multilingual Warmth:** Built from the ground up to balance Indic scripts (Kannada, Hindi, Marathi) alongside English with zero visual truncation or cramped line boxes.
+
+## Colors
+
+The palette operates under an uncompromising AAA contrast imperative. It guarantees legibility on low-brightness budget smartphone panels and budget village projection screens.
+
+### Palette Architecture
+- **Primary (`#16A34A` - Growth Green):** Represents savings, verified accounts, and agricultural loans. Used for primary state validations, positive balance metrics, and reassuring progress states.
+- **Secondary / Action Accent (`#F97316` - Sunrise Orange):** Designated exclusively for forward momentum, high-priority interactive touchpoints, primary transactional CTAs, and submission triggers.
+- **Tertiary / Voice & Intelligence (`#0EA5E9` - Sky Blue):** Powers interactive audio guides, automated vernacular explainers, and voice input surfaces.
+- **Surface & Container (`#ECFDF5` - Soft Mint):** Soft, non-glare container background that creates natural grouping without relying on heavy borders or gray shadows.
+- **Canvas (`#FFFFFF` - Pure White):** Ensures the highest possible reflectance ratio for outdoor and bright daylight visibility.
+- **Deep Text / Ink (`#0F172A` - Deep Slate):** Delivers a 14:1+ contrast ratio against white surfaces for body text, numbers, and structural iconography.
+- **Critical & Safety (`#DC2626` - Alert Red):** Reserved strictly for predatory loan alerts, scam warnings, emergency helpline access, and critical debt flags.
+- **Highlight & Rewards (`#FACC15` - Sun Yellow):** Reserved for government subsidies, completed schemes, community rewards, and star achievements. Always paired with `#0F172A` ink for legibility.
+
+## Typography
+
+Typography prioritizes high baseline clearance, open counters, and ample line height to handle complex vowel signs (matras and ottulu) across Devanagari and Kannada scripts without clipping.
+
+### Font Roles
+- **Headings & Financial Metrics (`Epilogue`):** Robust geometric architecture with deep structural cuts. It ensures numbers, currency values, and page titles remain instantly legible across wide viewing angles.
+- **Body & Operational Labels (`Plus Jakarta Sans`):** Warm, humanist geometry with broad x-height and generous inter-character spacing. It prevents optical crowding for senior eyes and lower-grade displays.
+
+### Typographic Principles
+- **No Micro-Text:** Absolute minimum font size anywhere in the interface is 13px, strictly reserved for uppercase pill badges. All explanatory copy starts at 18px (`body-lg`).
+- **Indian Financial Notation:** All monetary values must strictly render with the rupee symbol and standard Indian lakh/crore commas (e.g., `₹1,00,000` rather than `₹100,000`).
+- **Audio-Visual Accompaniment:** Wherever instructional text appears, line height accommodates an inline speaker icon button without altering flow.
+
+## Layout & Spacing
+
+The layout philosophy uses a flexible, single-to-multi-column rhythm designed for thumb-reach ergonomics on mobile and modular presentation clarity on larger tablets or projectors.
+
+### Grid & Breakpoints
+- **Mobile (320px – 599px):** Single-column layout. Margin set to `1rem` to maximize screen real estate while safeguarding accidental edge presses. Gutters at `0.75rem`.
+- **Tablet & Projected Screens (600px – 1023px):** 6-column fluid structure. Margin expands to `2rem`, gutter to `1.25rem`. Two-up layout for learning cards and verification sequences.
+- **Desktop & Training Kiosks (1024px+):** 12-column grid capped at a maximum width of `1200px` centered canvas. Margin at `3rem`, gutter at `1.5rem`.
+
+### Spatial Hierarchy
+- **Touch Target Rule:** Every single actionable container (buttons, cards, language switches) reserves a physical tap zone of no less than 56px in height.
+- **Content Stacking:** Structural cards are separated by `space-lg` (1.75rem) to eliminate ambiguity regarding where one financial topic ends and the next begins.
+
+## Elevation & Depth
+
+Visual hierarchy does not rely on blurry, low-contrast shadows that wash out on projector screens or under direct sun. Depth is constructed using solid structural borders paired with crisp, high-offset ambient physical planes.
+
+### Depth System
+- **Level 0 (Canvas Base):** Pure white (`#FFFFFF`). Houses full-bleed section divisions and root containers.
+- **Level 1 (Card & Content Modules):** Soft Mint fill (`#ECFDF5`) bordered with a deliberate 1.5px solid stroke in `#A7F3D0`. Casts an ambient, sharp daylight drop shadow: `0px 4px 0px 0px rgba(15, 23, 42, 0.08)`.
+- **Level 2 (Interactive Floating Elements & Trays):** Pure white surface with a 2px solid border (`#CBD5E1`) and a directional drop shadow: `0px 8px 0px 0px rgba(15, 23, 42, 0.12)`.
+- **Level 3 (Modal Alerts & Voice Overlays):** Pure white fill with an alert-tinted or brand-tinted 2px stroke, accompanied by a 40% solid neutral scrim (`#0F172A` with 40% alpha) to eliminate cognitive background noise.
+- **High-Contrast Focus Outlines:** Focused or selected elements feature an outer 3px solid ring in `#166534` offset by 2px white space.
+
+## Shapes
+
+The shape vocabulary uses friendly, pronounced rounding that remains distinct and tactile without drifting into cartoonish forms.
+
+### Corner Radius System
+- **Base Corner Radius (`rounded-md` - 12px / 0.75rem):** Form inputs, secondary tags, pill badges, and smaller status alerts.
+- **Large Container Radius (`rounded-lg` - 16px / 1rem):** Financial data cards, tutorial modules, and scheme comparisons.
+- **Signature Component Radius (`rounded-xl` / `rounded-2xl` - 20px / 1.25rem):** Primary interactive touchpoints, main action buttons, voice assistant bottom sheets, and floating hero cards.
+- **Full Pill (`rounded-full`):** Language toggles, sound playing indicators, and rupee increment chips.
+
+## Components
+
+### Buttons
+- **Primary CTA:** Minimum height of 56px (60px on mobile viewports). Background is Sunrise Orange (`#F97316`) with pure white bold text (`label-lg`). Includes a crisp 24px icon on the left (e.g., download, proceed, send) and an optional audio guide button integrated on the far right. Corner radius is 20px. 
+- **Secondary Action Button:** Minimum height 56px. Background is Soft Mint (`#ECFDF5`) with Deep Green (`#166534`) border (2px) and text.
+- **Emergency Helpline Button:** Solid Alert Red (`#DC2626`) fill with pure white label, accompanied by a phone receiver icon. Always anchored or clearly distinct from operational buttons.
+
+### Voice & Audio Assistant Trigger
+- A permanent, prominent circular or pill button featuring Sky Blue (`#0EA5E9`) with an animated or solid speaker/mic icon.
+- Tapping triggers a localized read-aloud of the current card's content in the chosen vernacular language.
+
+### Multilingual Selector Bar
+- Positioned persistently in the top navigation area.
+- Presents pill-shaped tabs containing both native script and English transliteration (e.g., "ಕನ್ನಡ / Kannada", "हिंदी / Hindi", "मराठी / Marathi"). Active state is Deep Green (`#166534`) with pure white text; inactive state is pure white with a 1.5px `#94A3B8` border and `#0F172A` text.
+
+### Financial Summary & Scheme Cards
+- Base surface is Soft Mint (`#ECFDF5`) encased in a 1.5px border (`#A7F3D0`).
+- Headers feature Deep Green (`#166534`) typography.
+- Metric display utilizes `currency-display` sizing with heavy emphasis on the ₹ symbol.
+- Integrated right-aligned status badge (e.g., Sun Yellow `#FACC15` for "Government Subsidized" or "Scheme Active").
+
+### Form Fields & Inputs
+- Minimum height of 60px with generous internal padding (`space-md`).
+- White surface enclosed by a 2px border in `#94A3B8`. Upon active focus, the border shifts to Deep Green (`#166534`) with a 3px outer glow ring.
+- Number keyboards and monetary inputs default to large 24px numerals. A dedicated "Microphone to Speak Amount" icon sits inside the trailing edge.
+
+### Alert & Scam Warning Banners
+- Solid light red container (`#FEF2F2`) with a heavy 2px border in Alert Red (`#DC2626`).
+- Left-anchored with a bold hazard warning icon, displaying warning text in `#0F172A` at minimum 18px size. Includes a prominent one-tap "Call Sahayata Helpline" link.

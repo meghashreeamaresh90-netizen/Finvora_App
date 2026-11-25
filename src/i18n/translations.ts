@@ -1,0 +1,655 @@
+import { LanguageCode } from '../types/finvora';
+
+export const LANGUAGES: Array<{
+  code: LanguageCode;
+  native: string;
+  english: string;
+}> = [
+  { code: 'kn', native: 'ಕನ್ನಡ', english: 'Kannada' },
+  { code: 'hi', native: 'हिंदी', english: 'Hindi' },
+  { code: 'mr', native: 'मराठी', english: 'Marathi' },
+  { code: 'ta', native: 'தமிழ்', english: 'Tamil' },
+  { code: 'en', native: 'English', english: 'English' },
+];
+
+export interface TranslationBundle {
+  appName: string;
+  tagline: string;
+  greeting: string;
+  personaLocation: string;
+  listen: string;
+  stopListening: string;
+  navHome: string;
+  navLearn: string;
+  navMoney: string;
+  navScam: string;
+  navHelp: string;
+  adminLink: string;
+  smartTipTitle: string;
+  refreshTip: string;
+  monthlySummary: string;
+  income: string;
+  expenses: string;
+  saved: string;
+  quickActions: string;
+  actionLearn: string;
+  actionLearnSub: string;
+  actionUpi: string;
+  actionUpiSub: string;
+  actionMoney: string;
+  actionMoneySub: string;
+  actionGoals: string;
+  actionGoalsSub: string;
+  actionSchemes: string;
+  actionSchemesSub: string;
+  actionCalc: string;
+  actionCalcSub: string;
+  actionScam: string;
+  actionScamSub: string;
+  actionAi: string;
+  actionAiSub: string;
+  actionBanks: string;
+  actionBanksSub: string;
+  actionProfile: string;
+  actionProfileSub: string;
+  emergencyBannerTitle: string;
+  emergencyBannerDesc: string;
+  call1930: string;
+  // Learn
+  learnTitle: string;
+  learnSubtitle: string;
+  yourProgress: string;
+  lessonsDone: string;
+  offlineSaved: string;
+  downloadOffline: string;
+  downloadedCheck: string;
+  markComplete: string;
+  completedCheck: string;
+  openUpiGuide: string;
+  catSavings: string;
+  catBudgeting: string;
+  catBanking: string;
+  catLoans: string;
+  catInsurance: string;
+  catDigital: string;
+  // UPI Guide
+  upiTitle: string;
+  upiStepOf: string;
+  back: string;
+  next: string;
+  finishGuide: string;
+  // Money
+  moneyTitle: string;
+  addIncome: string;
+  addExpense: string;
+  amountLabel: string;
+  titleLabel: string;
+  speakAmount: string;
+  saveEntry: string;
+  recentEntries: string;
+  viewGoals: string;
+  viewCalculators: string;
+  // Scam Rescue
+  scamTitle: string;
+  scamSubtitle: string;
+  scamInputPlaceholder: string;
+  checkMessageBtn: string;
+  checkingMsg: string;
+  tryExample: string;
+  reportScamBtn: string;
+  reportedSuccess: string;
+  verdictSafe: string;
+  verdictSuspicious: string;
+  verdictScam: string;
+  reasonsTitle: string;
+  adviceTitle: string;
+  commonScamsTitle: string;
+  // AI Assistant
+  aiTitle: string;
+  aiSubtitle: string;
+  aiPlaceholder: string;
+  sendBtn: string;
+  micBtn: string;
+  listeningNow: string;
+  suggestedTitle: string;
+  suggestedChips: [string, string, string];
+  awarenessNotice: string;
+  // Help & Banks
+  helpTitle: string;
+  nearbyBanks: string;
+  directionsBtn: string;
+  callBtn: string;
+}
+
+export const TRANSLATIONS: Record<LanguageCode, TranslationBundle> = {
+  en: {
+    appName: 'FINVORA',
+    tagline: 'Simple & Safe Money Guide',
+    greeting: 'Namaskara, Lakshmi!',
+    personaLocation: 'Farmer · Mandya, Karnataka',
+    listen: 'Listen',
+    stopListening: 'Stop',
+    navHome: 'Home',
+    navLearn: 'Learn',
+    navMoney: 'Money',
+    navScam: 'Scam Rescue',
+    navHelp: 'Help',
+    adminLink: 'Admin Panel',
+    smartTipTitle: 'Smart Savings Tip for You',
+    refreshTip: 'New AI Tip',
+    monthlySummary: 'This Month Summary',
+    income: 'Income',
+    expenses: 'Expenses',
+    saved: 'Saved',
+    quickActions: 'What would you like to do?',
+    actionLearn: 'Learn Money',
+    actionLearnSub: '6 easy topics & audio',
+    actionUpi: 'UPI Step Guide',
+    actionUpiSub: 'Safe digital payments',
+    actionMoney: 'Money Tracker',
+    actionMoneySub: 'Track income & spend',
+    actionGoals: 'Savings Goals',
+    actionGoalsSub: 'Education & farm pump',
+    actionSchemes: 'Govt Schemes',
+    actionSchemesSub: 'PM-KISAN & subsidies',
+    actionCalc: 'Calculators',
+    actionCalcSub: 'Loan EMI & interest',
+    actionScam: 'Scam Checker',
+    actionScamSub: 'Check SMS or links',
+    actionAi: 'Ask AI Sahayak',
+    actionAiSub: 'Voice & text answers',
+    actionBanks: 'Nearby Banks',
+    actionBanksSub: 'Mandya banks & ATMs',
+    actionProfile: 'My Progress',
+    actionProfileSub: 'Badges & reminders',
+    emergencyBannerTitle: 'Lost money to fraud or fake link?',
+    emergencyBannerDesc: 'Call the Government Cyber Crime Helpline immediately. It is free.',
+    call1930: 'Call 1930 Helpline',
+    learnTitle: 'Learn About Money',
+    learnSubtitle: 'Simple steps with voice support and offline saving.',
+    yourProgress: 'Your Learning Progress',
+    lessonsDone: 'lessons completed',
+    offlineSaved: 'saved offline',
+    downloadOffline: 'Download for offline',
+    downloadedCheck: 'Downloaded ✓',
+    markComplete: 'Mark as Completed',
+    completedCheck: 'Completed ✓',
+    openUpiGuide: 'Open Step-by-Step UPI Guide',
+    catSavings: 'Savings',
+    catBudgeting: 'Budgeting',
+    catBanking: 'Banking',
+    catLoans: 'Loans',
+    catInsurance: 'Insurance',
+    catDigital: 'Digital Payments',
+    upiTitle: 'Step-by-Step UPI Guide',
+    upiStepOf: 'Step',
+    back: 'Back',
+    next: 'Next',
+    finishGuide: 'Finish Guide ✓',
+    moneyTitle: 'Income & Expense Tracker',
+    addIncome: '+ Add Income',
+    addExpense: '+ Add Expense',
+    amountLabel: 'Amount in ₹',
+    titleLabel: 'What was this for?',
+    speakAmount: 'Speak',
+    saveEntry: 'Save Entry',
+    recentEntries: 'Passbook Entries',
+    viewGoals: 'Savings Goals',
+    viewCalculators: 'Loan & EMI Calculators',
+    scamTitle: 'Scam Rescue & Checker',
+    scamSubtitle: 'Paste any SMS, WhatsApp message, or link to check if it is safe.',
+    scamInputPlaceholder: 'Paste suspicious SMS, WhatsApp message, or website link here...',
+    checkMessageBtn: 'Check If Safe',
+    checkingMsg: 'Checking message...',
+    tryExample: 'Try sample messages:',
+    reportScamBtn: 'Report This Scam',
+    reportedSuccess: 'Reported to Finvora Safety Team ✓',
+    verdictSafe: 'SAFE MESSAGE',
+    verdictSuspicious: 'BE CAREFUL — SUSPICIOUS',
+    verdictScam: 'DANGER — THIS IS A SCAM',
+    reasonsTitle: '3 Reasons Why:',
+    adviceTitle: 'What You Should Do:',
+    commonScamsTitle: 'Common Scams to Watch Out For',
+    aiTitle: 'Ask AI Sahayak',
+    aiSubtitle: 'Ask any question about savings, loans, UPI, schemes, or scams.',
+    aiPlaceholder: 'Type or tap mic to ask in simple words...',
+    sendBtn: 'Ask',
+    micBtn: 'Speak Question',
+    listeningNow: 'Listening... speak now',
+    suggestedTitle: 'Tap a common question:',
+    suggestedChips: [
+      'How do I check PM-KISAN money?',
+      'Should I enter UPI PIN to receive money?',
+      'How can I save ₹700 every month?',
+    ],
+    awarenessNotice: 'This is financial awareness guidance, not legal advice.',
+    helpTitle: 'Help, AI Sahayak & Banks',
+    nearbyBanks: 'Nearby Banks & ATMs (Mandya)',
+    directionsBtn: 'Directions',
+    callBtn: 'Call',
+  },
+  kn: {
+    appName: 'ಫಿನ್ವೋರಾ',
+    tagline: 'ಸರಳ ಮತ್ತು ಸುರಕ್ಷಿತ ಹಣದ ಮಾರ್ಗದರ್ಶಿ',
+    greeting: 'ನಮಸ್ಕಾರ, ಲಕ್ಷ್ಮಿ!',
+    personaLocation: 'ರೈತರು · ಮಂಡ್ಯ, ಕರ್ನಾಟಕ',
+    listen: 'ಕೇಳಿ',
+    stopListening: 'ನಿಲ್ಲಿಸಿ',
+    navHome: 'ಮುಖಪುಟ',
+    navLearn: 'ಕಲಿಯಿರಿ',
+    navMoney: 'ಹಣ',
+    navScam: 'ವಂಚನೆ ತಡೆ',
+    navHelp: 'ಸಹಾಯ',
+    adminLink: 'ನಿರ್ವಾಹಕ',
+    smartTipTitle: 'ನಿಮಗಾಗಿ ಉಳಿತಾಯ ಸಲಹೆ',
+    refreshTip: 'ಹೊಸ ಸಲಹೆ',
+    monthlySummary: 'ಈ ತಿಂಗಳ ಲೆಕ್ಕ',
+    income: 'ಆದಾಯ',
+    expenses: 'ಖರ್ಚು',
+    saved: 'ಉಳಿತಾಯ',
+    quickActions: 'ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?',
+    actionLearn: 'ಹಣದ ಪಾಠ',
+    actionLearnSub: 'ಆರು ಸುಲಭ ವಿಷಯಗಳು',
+    actionUpi: 'ಯುಪಿಐ ಮಾರ್ಗದರ್ಶಿ',
+    actionUpiSub: 'ಸುರಕ್ಷಿತ ಡಿಜಿಟಲ್ ಪಾವತಿ',
+    actionMoney: 'ಹಣದ ಲೆಕ್ಕ',
+    actionMoneySub: 'ಆದಾಯ ಮತ್ತು ಖರ್ಚು ಬರೆಯಿರಿ',
+    actionGoals: 'ಉಳಿತಾಯ ಗುರಿ',
+    actionGoalsSub: 'ಶಿಕ್ಷಣ ಮತ್ತು ಪಂಪ್ ಸೆಟ್',
+    actionSchemes: 'ಸರ್ಕಾರಿ ಯೋಜನೆ',
+    actionSchemesSub: 'ಪಿಎಂ ಕಿಸಾನ್ ಮತ್ತು ಸಬ್ಸಿಡಿ',
+    actionCalc: 'ಲೆಕ್ಕಾಚಾರ',
+    actionCalcSub: 'ಸಾಲದ ಇಎಂಐ ಮತ್ತು ಬಡ್ಡಿ',
+    actionScam: 'ವಂಚನೆ ಪರೀಕ್ಷೆ',
+    actionScamSub: 'ಎಸ್ಎಂಎಸ್ ಅಥವಾ ಲಿಂಕ್ ಪರೀಕ್ಷಿಸಿ',
+    actionAi: 'ಧ್ವನಿ ಸಹಾಯಕ',
+    actionAiSub: 'ಧ್ವನಿ ಮತ್ತು ಬರಹ ಉತ್ತರ',
+    actionBanks: 'ಹತ್ತಿರದ ಬ್ಯಾಂಕ್',
+    actionBanksSub: 'ಮಂಡ್ಯ ಬ್ಯಾಂಕ್ ಮತ್ತು ಎಟಿಎಂ',
+    actionProfile: 'ನನ್ನ ಪ್ರಗತಿ',
+    actionProfileSub: 'ಬ್ಯಾಡ್ಜ್ ಮತ್ತು ನೆನಪುಗಳು',
+    emergencyBannerTitle: 'ಮೋಸದ ಲಿಂಕ್‌ನಿಂದ ಹಣ ಕಳೆದುಕೊಂಡಿದ್ದೀರಾ?',
+    emergencyBannerDesc: 'ತಕ್ಷಣ ಸರ್ಕಾರಿ ಸೈಬರ್ ಸಹಾಯವಾಣಿಗೆ ಉಚಿತವಾಗಿ ಕರೆ ಮಾಡಿ.',
+    call1930: '೧೯೩೦ ಗೆ ಕರೆ ಮಾಡಿ',
+    learnTitle: 'ಹಣದ ಬಗ್ಗೆ ಕಲಿಯಿರಿ',
+    learnSubtitle: 'ಧ್ವನಿ ಸಹಾಯದೊಂದಿಗೆ ಸರಳ ಪಾಠಗಳು.',
+    yourProgress: 'ನಿಮ್ಮ ಕಲಿಕೆಯ ಪ್ರಗತಿ',
+    lessonsDone: 'ಪಾಠಗಳು ಪೂರ್ಣಗೊಂಡಿವೆ',
+    offlineSaved: 'ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ',
+    downloadOffline: 'ಆಫ್‌ಲೈನ್‌ಗಾಗಿ ಡೌನ್‌ಲೋಡ್',
+    downloadedCheck: 'ಡೌನ್‌ಲೋಡ್ ಆಗಿದೆ ✓',
+    markComplete: 'ಪೂರ್ಣಗೊಂಡಿದೆ ಎಂದು ಗುರುತಿಸಿ',
+    completedCheck: 'ಪೂರ್ಣಗೊಂಡಿದೆ ✓',
+    openUpiGuide: 'ಹಂತ-ಹಂತದ ಯುಪಿಐ ಮಾರ್ಗದರ್ಶಿ ತೆರೆಯಿರಿ',
+    catSavings: 'ಉಳಿತಾಯ',
+    catBudgeting: 'ಬಜೆಟ್',
+    catBanking: 'ಬ್ಯಾಂಕಿಂಗ್',
+    catLoans: 'ಸಾಲಗಳು',
+    catInsurance: 'ವಿಮೆ',
+    catDigital: 'ಡಿಜಿಟಲ್ ಪಾವತಿ',
+    upiTitle: 'ಹಂತ-ಹಂತದ ಯುಪಿಐ ಮಾರ್ಗದರ್ಶಿ',
+    upiStepOf: 'ಹಂತ',
+    back: 'ಹಿಂದೆ',
+    next: 'ಮುಂದೆ',
+    finishGuide: 'ಮುಗಿಸಿ ✓',
+    moneyTitle: 'ಆದಾಯ ಮತ್ತು ಖರ್ಚು ಲೆಕ್ಕ',
+    addIncome: '+ ಆದಾಯ ಸೇರಿಸಿ',
+    addExpense: '+ ಖರ್ಚು ಸೇರಿಸಿ',
+    amountLabel: 'ಮೊತ್ತ (₹)',
+    titleLabel: 'ಇದು ಯಾವುದಕ್ಕಾಗಿ?',
+    speakAmount: 'ಮಾತನಾಡಿ',
+    saveEntry: 'ಉಳಿಸಿ',
+    recentEntries: 'ಪಾಸ್‌ಬುಕ್ ದಾಖಲೆಗಳು',
+    viewGoals: 'ಉಳಿತಾಯ ಗುರಿಗಳು',
+    viewCalculators: 'ಸಾಲದ ಇಎಂಐ ಲೆಕ್ಕ',
+    scamTitle: 'ವಂಚನೆ ತಡೆ ಮತ್ತು ಪರೀಕ್ಷೆ',
+    scamSubtitle: 'ಎಸ್ಎಂಎಸ್, ವಾಟ್ಸಾಪ್ ಸಂದೇಶ ಅಥವಾ ಲಿಂಕ್ ಸುರಕ್ಷಿತವೇ ಎಂದು ಪರೀಕ್ಷಿಸಿ.',
+    scamInputPlaceholder: 'ಸಂಶಯಾಸ್ಪದ ಎಸ್ಎಂಎಸ್ ಅಥವಾ ಲಿಂಕ್ ಇಲ್ಲಿ ಅಂಟಿಸಿ...',
+    checkMessageBtn: 'ಸುರಕ್ಷಿತವೇ ಪರೀಕ್ಷಿಸಿ',
+    checkingMsg: 'ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ...',
+    tryExample: 'ಉದಾಹರಣೆಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ:',
+    reportScamBtn: 'ಈ ವಂಚನೆಯನ್ನು ವರದಿ ಮಾಡಿ',
+    reportedSuccess: 'ಫಿನ್ವೋರಾ ಸುರಕ್ಷತಾ ತಂಡಕ್ಕೆ ವರದಿ ಮಾಡಲಾಗಿದೆ',
+    verdictSafe: 'ಸುರಕ್ಷಿತ ಸಂದೇಶ',
+    verdictSuspicious: 'ಎಚ್ಚರಿಕೆ — ಸಂಶಯಾಸ್ಪದವಾಗಿದೆ',
+    verdictScam: 'ಅಪಾಯ — ಇದು ವಂಚನೆ',
+    reasonsTitle: 'ಮೂರು ಪ್ರಮುಖ ಕಾರಣಗಳು:',
+    adviceTitle: 'ನೀವು ಏನು ಮಾಡಬೇಕು:',
+    commonScamsTitle: 'ಸಾಮಾನ್ಯ ವಂಚನೆಗಳ ಬಗ್ಗೆ ಎಚ್ಚರ',
+    aiTitle: 'ಸಹಾಯಕನನ್ನು ಕೇಳಿ',
+    aiSubtitle: 'ಉಳಿತಾಯ, ಸಾಲ, ಯುಪಿಐ, ಸರ್ಕಾರಿ ಯೋಜನೆ ಬಗ್ಗೆ ಕೇಳಿ.',
+    aiPlaceholder: 'ಸರಳ ಪದಗಳಲ್ಲಿ ಕೇಳಿ ಅಥವಾ ಮೈಕ್ ಒತ್ತಿ...',
+    sendBtn: 'ಕೇಳಿ',
+    micBtn: 'ಮಾತನಾಡಿ',
+    listeningNow: 'ಕೇಳಿಸಿಕೊಳ್ಳುತ್ತಿದೆ... ಮಾತನಾಡಿ',
+    suggestedTitle: 'ಸಾಮಾನ್ಯ ಪ್ರಶ್ನೆಗಳು:',
+    suggestedChips: [
+      'ಪಿಎಂ ಕಿಸಾನ್ ಹಣವನ್ನು ಹೇಗೆ ಪರಿಶೀಲಿಸುವುದು?',
+      'ಹಣ ಪಡೆಯಲು ಯುಪಿಐ ಪಿನ್ ಹಾಕಬೇಕೇ?',
+      'ಪ್ರತಿ ತಿಂಗಳು ಏಳು ನೂರು ರೂಪಾಯಿ ಉಳಿಸುವುದು ಹೇಗೆ?',
+    ],
+    awarenessNotice: 'ಇದು ಆರ್ಥಿಕ ಜಾಗೃತಿ ಮಾತ್ರ, ಕಾನೂನು ಸಲಹೆಯಲ್ಲ.',
+    helpTitle: 'ಸಹಾಯ, ಸಹಾಯಕ ಮತ್ತು ಬ್ಯಾಂಕ್',
+    nearbyBanks: 'ಹತ್ತಿರದ ಬ್ಯಾಂಕ್ ಮತ್ತು ಎಟಿಎಂ (ಮಂಡ್ಯ)',
+    directionsBtn: 'ದಾರಿ',
+    callBtn: 'ಕರೆ ಮಾಡಿ',
+  },
+  hi: {
+    appName: 'फिनवोरा (FINVORA)',
+    tagline: 'सरल और सुरक्षित पैसे की जानकारी',
+    greeting: 'नमस्कार, लक्ष्मी जी!',
+    personaLocation: 'किसान · मांड्या, कर्नाटक',
+    listen: 'सुनें',
+    stopListening: 'रोकें',
+    navHome: 'होम',
+    navLearn: 'सीखें',
+    navMoney: 'पैसा',
+    navScam: 'धोखा बचाव',
+    navHelp: 'मदद',
+    adminLink: 'एडमिन',
+    smartTipTitle: 'आपके लिए बचत सलाह',
+    refreshTip: 'नई AI सलाह',
+    monthlySummary: 'इस महीने का हिसाब',
+    income: 'कमाई',
+    expenses: 'खर्च',
+    saved: 'बचत',
+    quickActions: 'आप क्या करना चाहती हैं?',
+    actionLearn: 'पैसे की पढ़ाई',
+    actionLearnSub: '6 आसान विषय व ऑडियो',
+    actionUpi: 'UPI गाइड',
+    actionUpiSub: 'सुरक्षित डिजिटल पेमेंट',
+    actionMoney: 'हिसाब-किताब',
+    actionMoneySub: 'कमाई और खर्च लिखें',
+    actionGoals: 'बचत लक्ष्य',
+    actionGoalsSub: 'बेटी की पढ़ाई व पंप',
+    actionSchemes: 'सरकारी योजनाएं',
+    actionSchemesSub: 'PM-KISAN और सब्सिडी',
+    actionCalc: 'कैलकुलेटर',
+    actionCalcSub: 'ब्याज और EMI जांचें',
+    actionScam: 'स्कैम जांच',
+    actionScamSub: 'SMS या लिंक जांचें',
+    actionAi: 'AI सहायक',
+    actionAiSub: 'बोलकर सवाल पूछें',
+    actionBanks: 'पास के बैंक',
+    actionBanksSub: 'बैंक और ATM खोजें',
+    actionProfile: 'मेरी प्रगति',
+    actionProfileSub: 'बैज और रिमाइंडर',
+    emergencyBannerTitle: 'क्या धोखे से पैसे कट गए हैं?',
+    emergencyBannerDesc: 'तुरंत सरकारी साइबर हेल्पलाइन पर मुफ्त कॉल करें।',
+    call1930: '1930 पर कॉल करें',
+    learnTitle: 'पैसे के बारे में सीखें',
+    learnSubtitle: 'आवाज़ की मदद से आसान पाठ।',
+    yourProgress: 'आपकी सीखने की प्रगति',
+    lessonsDone: 'पाठ पूरे हुए',
+    offlineSaved: 'ऑफ़लाइन सहेजे गए',
+    downloadOffline: 'ऑफ़लाइन के लिए डाउनलोड करें',
+    downloadedCheck: 'डाउनलोड हो गया ✓',
+    markComplete: 'पूरा हुआ चिह्नित करें',
+    completedCheck: 'पूरा हुआ ✓',
+    openUpiGuide: 'स्टेप-बाय-स्टेप UPI गाइड खोलें',
+    catSavings: 'बचत',
+    catBudgeting: 'बजट',
+    catBanking: 'बैंकिंग',
+    catLoans: 'ऋण / कर्ज',
+    catInsurance: 'बीमा',
+    catDigital: 'डिजिटल पेमेंट',
+    upiTitle: 'आसान UPI गाइड',
+    upiStepOf: 'कदम',
+    back: 'पीछे',
+    next: 'आगे',
+    finishGuide: 'पूरा करें ✓',
+    moneyTitle: 'कमाई और खर्च का हिसाब',
+    addIncome: '+ कमाई जोड़ें',
+    addExpense: '+ खर्च जोड़ें',
+    amountLabel: 'रकम (₹)',
+    titleLabel: 'यह किसके लिए था?',
+    speakAmount: 'बोलें',
+    saveEntry: 'सेव करें',
+    recentEntries: 'पासबुक की सूची',
+    viewGoals: 'बचत लक्ष्य',
+    viewCalculators: 'लोन EMI कैलकुलेटर',
+    scamTitle: 'धोखाधड़ी जांच और बचाव',
+    scamSubtitle: 'कोई भी SMS, WhatsApp संदेश या लिंक यहां जांचें।',
+    scamInputPlaceholder: 'संदिग्ध SMS या लिंक यहां पेस्ट करें...',
+    checkMessageBtn: 'सुरक्षित है या नहीं जांचें',
+    checkingMsg: 'जांच हो रही है...',
+    tryExample: 'उदाहरण जांचें:',
+    reportScamBtn: 'इस धोखे की रिपोर्ट करें',
+    reportedSuccess: 'फिनवोरा टीम को रिपोर्ट किया गया ✓',
+    verdictSafe: 'सुरक्षित संदेश',
+    verdictSuspicious: 'सावधान — संदिग्ध है',
+    verdictScam: 'खतरा — यह धोखाधड़ी (SCAM) है',
+    reasonsTitle: '3 मुख्य कारण:',
+    adviceTitle: 'आपको क्या करना चाहिए:',
+    commonScamsTitle: 'इन आम धोखों से बचें',
+    aiTitle: 'AI सहायक से पूछें',
+    aiSubtitle: 'बचत, लोन, UPI, सरकारी योजना या ठगी पर पूछें।',
+    aiPlaceholder: 'सरल शब्दों में लिखें या माइक दबाएं...',
+    sendBtn: 'पूछें',
+    micBtn: 'बोलकर पूछें',
+    listeningNow: 'सुन रहे हैं... अब बोलें',
+    suggestedTitle: 'आम सवाल चुनें:',
+    suggestedChips: [
+      'PM-KISAN का पैसा कैसे जांचें?',
+      'पैसे लेने के लिए क्या UPI PIN डालना होता है?',
+      'हर महीने ₹700 कैसे बचाएं?',
+    ],
+    awarenessNotice: 'यह केवल जागरूकता जानकारी है, कानूनी सलाह नहीं।',
+    helpTitle: 'मदद, AI सहायक और बैंक',
+    nearbyBanks: 'पास के बैंक और ATM (मांड्या)',
+    directionsBtn: 'रास्ता',
+    callBtn: 'कॉल करें',
+  },
+  mr: {
+    appName: 'फिनवोरा (FINVORA)',
+    tagline: 'सोपे आणि सुरक्षित पैशाचे मार्गदर्शन',
+    greeting: 'नमस्कार, लक्ष्मीबाई!',
+    personaLocation: 'शेतकरी · मंड्या, कर्नाटक',
+    listen: 'ऐका',
+    stopListening: 'थांबा',
+    navHome: 'मुख्यपृष्ठ',
+    navLearn: 'शिका',
+    navMoney: 'पैसा',
+    navScam: 'फसवणूक बचाव',
+    navHelp: 'मदत',
+    adminLink: 'प्रशासक',
+    smartTipTitle: 'तुमच्यासाठी बचत सल्ला',
+    refreshTip: 'नवीन AI सल्ला',
+    monthlySummary: 'या महिन्याचा हिशोब',
+    income: 'उत्पन्न',
+    expenses: 'खर्च',
+    saved: 'बचत',
+    quickActions: 'तुम्हाला काय करायचे आहे?',
+    actionLearn: 'पैशांचे शिक्षण',
+    actionLearnSub: '6 सोपे विषय व ऑडिओ',
+    actionUpi: 'UPI मार्गदर्शक',
+    actionUpiSub: 'सुरक्षित डिजिटल पेमेंट',
+    actionMoney: 'हिशोब नोंद',
+    actionMoneySub: 'उत्पन्न आणि खर्च लिहा',
+    actionGoals: 'बचतीचे ध्येय',
+    actionGoalsSub: 'शिक्षण व पाण्याचा पंप',
+    actionSchemes: 'सरकारी योजना',
+    actionSchemesSub: 'PM-KISAN व अनुदान',
+    actionCalc: 'कॅल्क्युलेटर',
+    actionCalcSub: 'कर्ज EMI व व्याज',
+    actionScam: 'फसवणूक तपासणी',
+    actionScamSub: 'SMS किंवा लिंक तपासा',
+    actionAi: 'AI सहाय्यक',
+    actionAiSub: 'बोलून प्रश्न विचारा',
+    actionBanks: 'जवळच्या बँका',
+    actionBanksSub: 'बँक आणि ATM शोधा',
+    actionProfile: 'माझी प्रगती',
+    actionProfileSub: 'बॅज आणि स्मरणपत्रे',
+    emergencyBannerTitle: 'फसवणुकीमुळे पैसे गेले आहेत का?',
+    emergencyBannerDesc: 'तात्काळ सरकारी सायबर हेल्पलाईनवर मोफत कॉल करा.',
+    call1930: '1930 वर कॉल करा',
+    learnTitle: 'पैशांबद्दल शिका',
+    learnSubtitle: 'आवाजाच्या मदतीने सोपे धडे.',
+    yourProgress: 'तुमची शिकण्याची प्रगती',
+    lessonsDone: 'धडे पूर्ण झाले',
+    offlineSaved: 'ऑफलाइन जतन केले',
+    downloadOffline: 'ऑफलाइनसाठी डाउनलोड करा',
+    downloadedCheck: 'डाउनलोड झाले ✓',
+    markComplete: 'पूर्ण झाले म्हणून नोंदवा',
+    completedCheck: 'पूर्ण झाले ✓',
+    openUpiGuide: 'सोपी UPI पायरी-पायरी मार्गदर्शिका उघडा',
+    catSavings: 'बचत',
+    catBudgeting: 'बजेट',
+    catBanking: 'बँकिंग',
+    catLoans: 'कर्ज',
+    catInsurance: 'विमा',
+    catDigital: 'डिजिटल पेमेंट',
+    upiTitle: 'सोपी UPI मार्गदर्शिका',
+    upiStepOf: 'पायरी',
+    back: 'मागे',
+    next: 'पुढे',
+    finishGuide: 'पूर्ण करा ✓',
+    moneyTitle: 'उत्पन्न आणि खर्च हिशोब',
+    addIncome: '+ उत्पन्न जोडा',
+    addExpense: '+ खर्च जोडा',
+    amountLabel: 'रक्कम (₹)',
+    titleLabel: 'कशासाठी होते?',
+    speakAmount: 'बोला',
+    saveEntry: 'जतन करा',
+    recentEntries: 'पासबुक नोंदी',
+    viewGoals: 'बचतीचे ध्येय',
+    viewCalculators: 'कर्ज EMI कॅल्क्युलेटर',
+    scamTitle: 'फसवणूक तपासणी व बचाव',
+    scamSubtitle: 'कोणताही SMS, WhatsApp संदेश किंवा लिंक सुरक्षित आहे का ते तपासा.',
+    scamInputPlaceholder: 'संशयास्पद SMS किंवा लिंक येथे पेस्ट करा...',
+    checkMessageBtn: 'सुरक्षित आहे का तपासा',
+    checkingMsg: 'तपासत आहे...',
+    tryExample: 'उदाहरणे तपासा:',
+    reportScamBtn: 'या फसवणुकीची तक्रार करा',
+    reportedSuccess: 'फिनवोरा टीमकडे तक्रार नोंदवली ✓',
+    verdictSafe: 'सुरक्षित संदेश',
+    verdictSuspicious: 'सावध राहा — संशयास्पद',
+    verdictScam: 'धोका — ही फसवणूक (SCAM) आहे',
+    reasonsTitle: '3 मुख्य कारणे:',
+    adviceTitle: 'तुम्ही काय करावे:',
+    commonScamsTitle: 'या सामान्य फसवणुकींपासून सावध राहा',
+    aiTitle: 'AI सहाय्यकाला विचारा',
+    aiSubtitle: 'बचत, कर्ज, UPI, योजना किंवा फसवणुकीबद्दल विचारा.',
+    aiPlaceholder: 'सोप्या शब्दांत विचारा किंवा माइक दाबा...',
+    sendBtn: 'विचारा',
+    micBtn: 'बोलून विचारा',
+    listeningNow: 'ऐकत आहे... आता बोला',
+    suggestedTitle: 'सामान्य प्रश्न निवडा:',
+    suggestedChips: [
+      'PM-KISAN चे पैसे कसे तपासायचे?',
+      'पैसे मिळवण्यासाठी UPI PIN टाकावा लागतो का?',
+      'दरमहा ₹700 बचत कशी करावी?',
+    ],
+    awarenessNotice: 'ही केवळ आर्थिक जनजागृती आहे, कायदेशीर सल्ला नाही.',
+    helpTitle: 'मदत, AI सहाय्यक व बँका',
+    nearbyBanks: 'जवळच्या बँका आणि ATM (मंड्या)',
+    directionsBtn: 'दिशा',
+    callBtn: 'कॉल करा',
+  },
+  ta: {
+    appName: 'பின்வோரா (FINVORA)',
+    tagline: 'எளிய மற்றும் பாதுகாப்பான பண வழிகாட்டி',
+    greeting: 'வணக்கம், லட்சுமி அம்மா!',
+    personaLocation: 'விவசாயி · மாண்டியா, கர்நாடகா',
+    listen: 'கேளுங்கள்',
+    stopListening: 'நிறுத்து',
+    navHome: 'முகப்பு',
+    navLearn: 'கற்க',
+    navMoney: 'பணம்',
+    navScam: 'மோசடி தடுப்பு',
+    navHelp: 'உதவி',
+    adminLink: 'நிர்வாகம்',
+    smartTipTitle: 'உங்களுக்கான சேமிப்பு ஆலோசனை',
+    refreshTip: 'புதிய AI ஆலோசனை',
+    monthlySummary: 'இந்த மாத கணக்கு',
+    income: 'வருமானம்',
+    expenses: 'செலவு',
+    saved: 'சேமிப்பு',
+    quickActions: 'நீங்கள் என்ன செய்ய விரும்புகிறீர்கள்?',
+    actionLearn: 'பணம் கற்க',
+    actionLearnSub: '6 எளிய பாடங்கள் & குரல்',
+    actionUpi: 'UPI வழிகாட்டி',
+    actionUpiSub: 'பாதுகாப்பான பணப் பரிமாற்றம்',
+    actionMoney: 'பணக் கணக்கு',
+    actionMoneySub: 'வரவு செலவு பதிவு',
+    actionGoals: 'சேமிப்பு இலக்கு',
+    actionGoalsSub: 'கல்வி மற்றும் பம்ப் செட்',
+    actionSchemes: 'அரசு திட்டங்கள்',
+    actionSchemesSub: 'PM-KISAN & மானியங்கள்',
+    actionCalc: 'கணக்கீடுகள்',
+    actionCalcSub: 'கடன் EMI & வட்டி',
+    actionScam: 'மோசடி சோதனை',
+    actionScamSub: 'SMS அல்லது லிங்க் சரிபார்க்க',
+    actionAi: 'AI உதவியாளர்',
+    actionAiSub: 'பேசி கேள்வி கேளுங்கள்',
+    actionBanks: 'அருகிலுள்ள வங்கி',
+    actionBanksSub: 'வங்கி மற்றும் ATM',
+    actionProfile: 'என் முன்னேற்றம்',
+    actionProfileSub: 'விருதுகள் & நினைவூட்டல்',
+    emergencyBannerTitle: 'மோசடி லிங்க் மூலம் பணம் இழந்தீர்களா?',
+    emergencyBannerDesc: 'உடனே அரசு சைபர் உதவி எண்ணுக்கு இலவசமாக அழைக்கவும்.',
+    call1930: '1930-க்கு அழைக்கவும்',
+    learnTitle: 'பணம் பற்றி கற்றுக்கொள்ளுங்கள்',
+    learnSubtitle: 'குரல் உதவியுடன் எளிய பாடங்கள்.',
+    yourProgress: 'உங்கள் கற்றல் முன்னேற்றம்',
+    lessonsDone: 'பாடங்கள் முடிந்தன',
+    offlineSaved: 'ஆஃப்லைனில் சேமிக்கப்பட்டது',
+    downloadOffline: 'ஆஃப்லைனில் பதிவிறக்கவும்',
+    downloadedCheck: 'பதிவிறக்கப்பட்டது ✓',
+    markComplete: 'முடிந்ததாக குறிக்கவும்',
+    completedCheck: 'முடிந்தது ✓',
+    openUpiGuide: 'படிப்படியான UPI வழிகாட்டியைத் திற',
+    catSavings: 'சேமிப்பு',
+    catBudgeting: 'பட்ஜெட்',
+    catBanking: 'வங்கி சேவை',
+    catLoans: 'கடன்கள்',
+    catInsurance: 'காப்பீடு',
+    catDigital: 'டிஜிட்டல் பணம்',
+    upiTitle: 'படிப்படியான UPI வழிகாட்டி',
+    upiStepOf: 'படி',
+    back: 'பின்',
+    next: 'அடுத்து',
+    finishGuide: 'முடிக்கவும் ✓',
+    moneyTitle: 'வருமானம் மற்றும் செலவு கணக்கு',
+    addIncome: '+ வருமானம் சேர்',
+    addExpense: '+ செலவு சேர்',
+    amountLabel: 'தொகை (₹)',
+    titleLabel: 'இது எதற்காக?',
+    speakAmount: 'பேசு',
+    saveEntry: 'சேமிக்கவும்',
+    recentEntries: 'பாஸ்புக் பதிவுகள்',
+    viewGoals: 'சேமிப்பு இலக்குகள்',
+    viewCalculators: 'கடன் EMI கணக்கீடு',
+    scamTitle: 'மோசடி சோதனை மற்றும் பாதுகாப்பு',
+    scamSubtitle: 'எந்தவொரு SMS, WhatsApp செய்தி அல்லது லிங்க் பாதுகாப்பானதா என சோதிக்கவும்.',
+    scamInputPlaceholder: 'சந்தேகத்திற்குரிய SMS அல்லது லிங்கை இங்கே ஒட்டவும்...',
+    checkMessageBtn: 'பாதுகாப்பானதா என சோதிக்கவும்',
+    checkingMsg: 'சோதிக்கப்படுகிறது...',
+    tryExample: 'மாதிரி செய்திகளை சோதிக்க:',
+    reportScamBtn: 'இந்த மோசடியை புகாரளி',
+    reportedSuccess: 'பின்வோரா பாதுகாப்பு குழுவிடம் புகாரளிக்கப்பட்டது ✓',
+    verdictSafe: 'பாதுகாப்பான செய்தி',
+    verdictSuspicious: 'எச்சரிக்கை — சந்தேகத்திற்கிடமானது',
+    verdictScam: 'ஆபத்து — இது மோசடி (SCAM)',
+    reasonsTitle: '3 முக்கிய காரணங்கள்:',
+    adviceTitle: 'நீங்கள் செய்ய வேண்டியது:',
+    commonScamsTitle: 'பொதுவான மோசடிகள் குறித்து எச்சரிக்கை',
+    aiTitle: 'AI உதவியாளரிடம் கேளுங்கள்',
+    aiSubtitle: 'சேமிப்பு, கடன், UPI, அரசு திட்டம் பற்றி கேளுங்கள்.',
+    aiPlaceholder: 'எளிய வார்த்தைகளில் கேளுங்கள் அல்லது மைக் அழுத்தவும்...',
+    sendBtn: 'கேள்',
+    micBtn: 'பேசி கேளுங்கள்',
+    listeningNow: 'கேட்கிறது... இப்போது பேசுங்கள்',
+    suggestedTitle: 'பொதுவான கேள்விகள்:',
+    suggestedChips: [
+      'PM-KISAN பணத்தை எப்படி சரிபார்ப்பது?',
+      'பணம் பெற UPI PIN போட வேண்டுமா?',
+      'மாதம் ₹700 சேமிப்பது எப்படி?',
+    ],
+    awarenessNotice: 'இது நிதி விழிப்புணர்வு மட்டுமே, சட்ட ஆலோசனை அல்ல.',
+    helpTitle: 'உதவி, AI மற்றும் வங்கிகள்',
+    nearbyBanks: 'அருகிலுள்ள வங்கி மற்றும் ATM (மாண்டியா)',
+    directionsBtn: 'வழி',
+    callBtn: 'அழை',
+  },
+};

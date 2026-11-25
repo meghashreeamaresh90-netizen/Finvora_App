@@ -1,0 +1,6 @@
+{
+  "name": "FINVORA — Rural Financial Awareness",
+  "description": "Multilingual financial literacy, money tracking, government schemes, and AI scam rescue platform for rural Indian communities.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
